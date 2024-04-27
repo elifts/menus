@@ -85,6 +85,19 @@
     </label>
 </div>
 
+<script>
+    // JavaScript to make checkboxes functional
+    const checkboxes = document.querySelectorAll('.custom-checkbox input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                console.log('Checkbox checked:', this.value);
+            } else {
+                console.log('Checkbox unchecked:', this.value);
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
-
