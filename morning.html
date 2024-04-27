@@ -1,25 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Checkboxes Example</title>
+    <style>
+        /* Style for the container of the checkboxes */
+        .checkbox-container {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Style for each checkbox */
+        .checkbox-container input[type="checkbox"] {
+            display: none; /* Hide the default checkbox */
+        }
+        
+        /* Style for the custom checkbox appearance */
+        .custom-checkbox {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        
+        /* Style for the custom checkbox checkmark */
+        .custom-checkbox::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #aaa;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+        
+        /* Style for the custom checkbox when checked */
+        .custom-checkbox input[type="checkbox"]:checked + .custom-checkbox::before {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        
+        /* Style for the custom checkbox checkmark symbol */
+        .custom-checkbox::after {
+            content: '\2713'; /* Unicode checkmark symbol */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 16px;
+            display: none;
+        }
+        
+        /* Style for the custom checkbox checkmark symbol when checked */
+        .custom-checkbox input[type="checkbox"]:checked + .custom-checkbox::after {
+            display: block;
+        }
+    </style>
 </head>
 <body>
 
-<input type="checkbox" id="clothes" name="morning" value="clothes">
-        <label for="clothes">clothes</label><br>
+<div class="checkbox-container">
+    <label class="custom-checkbox">
+        <input type="checkbox" id="clothes" name="morning" value="clothes">
+        Clothes
+    </label>
 
+    <label class="custom-checkbox">
         <input type="checkbox" id="computer" name="morning" value="computer">
-        <label for="computer">computer</label><br>
+        Computer
+    </label>
 
-        <input type="checkbox" id="lunch box" name="morning" value="lunch box">
-        <label for="lunch box">lunch box</label><br>
+    <label class="custom-checkbox">
+        <input type="checkbox" id="lunch-box" name="morning" value="lunch box">
+        Lunch Box
+    </label>
 
+    <label class="custom-checkbox">
         <input type="checkbox" id="headphones" name="morning" value="headphones">
-        <label for="headphones">headphones</label><br>
+        Headphones
+    </label>
+</div>
 
-  
-  
 </body>
 </html>
+
